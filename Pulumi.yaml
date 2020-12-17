@@ -1,0 +1,6 @@
+name: pulumi-data-factory
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Pulumi Data Factory
