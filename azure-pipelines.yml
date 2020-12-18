@@ -8,6 +8,7 @@ stages:
 - stage: Development
   jobs:
   - job: Deploy
+    steps:
     - task: CmdLine@2
       inputs:
         script: 'echo hello world'
