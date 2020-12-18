@@ -12,3 +12,11 @@ stages:
     - task: CmdLine@2
       inputs:
         script: 'echo hello world'
+
+- stage: Production
+  jobs:
+  - job: Deploy
+    steps:
+    - task: CmdLine@2
+      inputs:
+        script: 'echo hello world'
