@@ -23,7 +23,7 @@ $ az account list # Get list of available azure subscriptions
 ...
 ...
 ]
-$ az 
+$ az account set -s a-guid
 ```
 
 ## Install Dependencies
@@ -40,10 +40,17 @@ Collecting pulumi-azure<4.0.0,>=3.0.0
 ...
 ```
 
+## Upload infrastructure
+
+```cmd
+$ pulumi up --yes # Upload the infrastructure and automatically approve.
+```
+
 ## TODO
 
-[] Run the default project and get it going locally into a subscription;
+[x] Run the default project and get it going locally into a subscription;
 [] Link Pulumi to an Azure DevOps project and run the same template
 into another subscription;
 [] Paramertise the template (stack) so that it can be used across different
-environments.
+environments; and
+[] Create mutable infrastructure, modify the data inside it, and redeploy.
