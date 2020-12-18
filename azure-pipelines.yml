@@ -15,11 +15,12 @@ stages:
 
 - stage: Production
   jobs:
-  - job: Deploy
-    steps:
-    - task: ManualIntervention@8
-      inputs:
-        instructions: 'Do you wish to deploy into production?'
-    - task: CmdLine@2
-      inputs:
-        script: 'echo hello world'
+  - deployment: deploy
+    environment: Production
+    strategy:
+     runOnce:
+      deploy:
+        steps:
+        - task: CmdLine@2
+          inputs:
+            script: 'echo hello world'
