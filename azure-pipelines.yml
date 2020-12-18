@@ -17,6 +17,9 @@ stages:
   jobs:
   - job: Deploy
     steps:
+    - task: ManualIntervention@8
+      inputs:
+        instructions: 'Do you wish to deploy into production?'
     - task: CmdLine@2
       inputs:
         script: 'echo hello world'
