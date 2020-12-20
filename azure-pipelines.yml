@@ -9,7 +9,7 @@ stages:
   jobs:
   - job: Deploy
     steps:
-    - task: Pulumi@1
+    - task: Pulumi@1 # needs env variable 'pulumi.access.token'
       displayName: "Deploy Infrastructure"
       inputs:
         azureSubscription: 'Azure Purple Trial'
