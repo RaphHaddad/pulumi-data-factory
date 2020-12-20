@@ -14,6 +14,7 @@ stages:
       inputs:
         azureSubscription: 'Azure Purple Trial'
         command: 'up'
+        args: '--yes'
         stack: 'dev'
 
 - stage: Production
