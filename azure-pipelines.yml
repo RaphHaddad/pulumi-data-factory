@@ -9,9 +9,12 @@ stages:
   jobs:
   - job: Deploy
     steps:
-    - task: CmdLine@2
+    - task: Pulumi@1
+      displayName: "Deploy Infrastructure"
       inputs:
-        script: 'echo hello world'
+        azureSubscription: 'Azure Purple Trial'
+        command: 'up'
+        stack: 'dev'
 
 - stage: Production
   jobs:
@@ -21,9 +24,6 @@ stages:
      runOnce:
       deploy:
         steps:
-        - task: Pulumi@1
-          displayName: "Deploy Infrastructure"
+        - task: CmdLine@2
           inputs:
-            azureSubscription: 'Azure Purple Trial'
-            command: 'up'
-            stack: 'dev'
+            script: 'echo hello world'
