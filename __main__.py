@@ -3,15 +3,19 @@
 import pulumi
 from pulumi_azure import core, storage
 
-# Create an Azure Resource Group
-resource_group = core.ResourceGroup('resource_group')
+def get_env():
+    config = pulumi.Config()
+    return config.require('env')
 
-# Create an Azure resource (Storage Account)
+def get_resource_group():
+    env = get_env()
+    return core.ResourceGroup('resource_group_{env}'.format(env=env))
+
+resource_group = get_resource_group()
 account = storage.Account('storage',
                           # The location for the storage account will be derived automatically from the resource group.
                           resource_group_name=resource_group.name,
                           account_tier='Standard',
                           account_replication_type='LRS')
 
-# Export the connection string for the storage account
 pulumi.export('connection_string', account.primary_connection_string)

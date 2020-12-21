@@ -1,4 +1,4 @@
 config:
   azure:environment: public
   azure:location: australiasoutheast
-  pulumi-data-factory:env: dev
+  pulumi-data-factory:env: prod

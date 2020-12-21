@@ -43,6 +43,7 @@ Collecting pulumi-azure<4.0.0,>=3.0.0
 ## Upload infrastructure
 
 ```cmd
+$ pulumi preview # For quick validation
 $ pulumi up --yes # Upload the infrastructure and automatically approve.
 ```
 
