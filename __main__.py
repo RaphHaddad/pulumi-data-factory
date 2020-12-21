@@ -11,6 +11,7 @@ def get_resource_group():
     env = get_env()
     return core.ResourceGroup('resource_group_{env}'.format(env=env))
 
+env = get_env()
 resource_group = get_resource_group()
 account = storage.Account('storage{env}'.format(env=env),
                           # The location for the storage account will be derived automatically from the resource group.
