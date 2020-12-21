@@ -1,6 +1,8 @@
 # Pulumi Example
 
-## Configure Azure CLI
+## Setup
+
+### Configure Azure CLI
 
 ```cmd
 $ az login # Login to Azure
@@ -26,7 +28,7 @@ $ az account list # Get list of available azure subscriptions
 $ az account set -s a-guid
 ```
 
-## Install Dependencies
+### Install Dependencies
 
 ```cmd
 $ python -m venv ./venv
@@ -40,7 +42,7 @@ Collecting pulumi-azure<4.0.0,>=3.0.0
 ...
 ```
 
-## Upload infrastructure
+### Upload infrastructure
 
 ```cmd
 $ pulumi preview # For quick validation

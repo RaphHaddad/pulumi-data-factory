@@ -12,7 +12,7 @@ def get_resource_group():
     return core.ResourceGroup('resource_group_{env}'.format(env=env))
 
 resource_group = get_resource_group()
-account = storage.Account('storage',
+account = storage.Account('storage{env}'.format(env=env),
                           # The location for the storage account will be derived automatically from the resource group.
                           resource_group_name=resource_group.name,
                           account_tier='Standard',
