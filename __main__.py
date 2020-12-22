@@ -2,10 +2,7 @@
 
 import pulumi
 from pulumi_azure import core, storage
-
-def get_env():
-    config = pulumi.Config()
-    return config.require('env')
+from environments import get_env
 
 def get_resource_group():
     env = get_env()

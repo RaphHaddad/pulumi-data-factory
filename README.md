@@ -54,6 +54,6 @@ $ pulumi up --yes # Upload the infrastructure and automatically approve.
 [x] Run the default project and get it going locally into a subscription;
 [x] Link Pulumi to an Azure DevOps project and run the same template
 into another subscription;
-[] Paramertise the template (stack) so that it can be used across different
+[x] Paramertise the template (stack) so that it can be used across different
 environments; and
 [] Create mutable infrastructure, modify the data inside it, and redeploy.
